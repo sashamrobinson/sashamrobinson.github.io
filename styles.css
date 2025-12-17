@@ -3,12 +3,16 @@ body {
     margin-left: auto;
     margin-right: auto;
     min-width: 200px;
-    max-width: 750px;
+    max-width: 800px;
     margin-top: 3em;
 }
 
 p {
     font-size: 1em;
+}
+
+.small-text {
+    font-size: 0.95em;
 }
 
 .sub-text {
@@ -73,31 +77,13 @@ a {
 
 @media (max-width: 768px) {
     body {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    .container {
-        margin-left: auto;
-        margin-right: auto;
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
-    .container-left img {
-        float: left;
-        margin-right: 3em;
-        border-radius: 50%;
-        width: 10em;
-        height: auto;
-    }
-
-    p {
-        font-size: 0.8em;
-    }
-
-    .sub-text {
-        font-size: 0.7em;
+    .project-image {
+        margin: auto;
+        width: 50%;
     }
 }
 
@@ -129,3 +115,35 @@ a {
     color: #666;
     font-weight: bold;
   }
+
+.project {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.project-image {
+    flex: 0 0 30%;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-text {
+    flex: 0 0 70%;
+}
+
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+    }
+
+    .project-image,
+    .project-text {
+        flex: 100%;
+    }
+}
