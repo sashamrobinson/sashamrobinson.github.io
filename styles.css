@@ -1,10 +1,20 @@
+html,
 body {
+    margin: 0;
+    background-color: rgba(240, 238, 230);
+}
+
+body {
+    margin-top: 0.75em;
+}
+
+.page,
+.top-bar-inner {
     display: block;
     margin-left: auto;
     margin-right: auto;
     min-width: 200px;
     max-width: 800px;
-    margin-top: 3em;
 }
 
 p {
@@ -19,27 +29,87 @@ p {
     font-size: 1em;
 }
 
-h2 {
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #eaecef;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #ddd9d0;
+    background-color: rgba(240, 238, 230);
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.site-name {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
     font-weight: 600;
+    color: inherit;
+}
+
+.container-right h2 {
+    margin: 0 5px 0.15em;
+    padding: 0;
+    border-bottom: none;
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+}
+
+.nav-links a {
+    color: #888;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: rgba(216, 119, 88);
+    text-decoration-color: rgba(216, 119, 88);
+}
+
+.container-right .subheader {
+    color: #888;
+    font-size: 0.95em;
+    margin: 0 5px 1.25em;
 }
 
 h4 {
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #eaecef;
+    border-bottom: 1px solid #ddd9d0;
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
     font-weight: 600;
 }
 
+#selected-works {
+    scroll-margin-top: 4rem;
+}
+
+.container-left {
+    flex: 0 0 14em;
+    margin: 0;
+    padding: 0;
+    width: 14em;
+}
+
 .container-left img {
-   float: left;
-   margin-right: 3em;
-   border-radius: 50%;
-   width: 12em;
+   border-radius: 8px;
+   width: 100%;
    height: auto;
 }
 
-.container-left, .container-right {
+.container-right {
+    flex: 1 1 auto;
+    min-width: 0;
     padding: 0;
     margin: 0;
 }
@@ -50,11 +120,12 @@ h4 {
 }
 
 .container {
-    overflow: hidden;
+    display: flex;
+    gap: 3em;
+    align-items: flex-start;
     margin-top: 1em;
-    align-items: center; 
-    padding: 0;
     margin-bottom: 2em;
+    padding: 0;
 }
 
 a {
@@ -62,11 +133,18 @@ a {
 }
 
 .icons {
-    margin-top: 10px;
+    margin-top: 0.75em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75em;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .icons a {
-    padding-right: 15px;
+    font-weight: 500;
+    color: rgba(216, 119, 88);
 }
 
 .social-icon {
@@ -76,9 +154,20 @@ a {
 }
 
 @media (max-width: 768px) {
-    body {
+    .page,
+    .top-bar-inner {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .container-left {
+        flex: none;
+        width: 14em;
     }
 
     .project-image {
@@ -119,8 +208,10 @@ a {
 .project {
     display: flex;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
     align-items: flex-start;
+    border-bottom: 1px solid #ddd9d0;
 }
 
 .project-image {
@@ -135,6 +226,51 @@ a {
 
 .project-text {
     flex: 0 0 70%;
+}
+
+.project:not(:has(.project-image)) .project-text {
+    flex: 1 1 100%;
+}
+
+.venue {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(216, 119, 88);
+    margin-bottom: 0.35rem;
+}
+
+.project-title {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.authors {
+    color: #888;
+}
+
+.author-me {
+    color: #000;
+    font-weight: 500;
+}
+
+.paper-btn {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding: 0.2em 0.7em;
+    font-size: 0.9em;
+    color: rgba(216, 119, 88);
+    border: 1px solid rgba(216, 119, 88);
+    border-radius: 4px;
+    background: transparent;
+}
+
+.paper-btn:hover {
+    color: #fff;
+    background: rgba(216, 119, 88);
 }
 
 @media (max-width: 768px) {
