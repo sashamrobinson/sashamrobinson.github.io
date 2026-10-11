@@ -232,14 +232,20 @@ a {
     flex: 1 1 100%;
 }
 
+.venue-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 0.35rem;
+}
+
 .venue {
-    display: block;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: rgba(216, 119, 88);
-    margin-bottom: 0.35rem;
 }
 
 .project-title {
@@ -259,9 +265,11 @@ a {
 
 .paper-btn {
     display: inline-block;
-    margin-top: 0.5em;
-    padding: 0.2em 0.7em;
-    font-size: 0.9em;
+    padding: 0.1em 0.55em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: rgba(216, 119, 88);
     border: 1px solid rgba(216, 119, 88);
     border-radius: 4px;
